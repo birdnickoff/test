@@ -1,0 +1,32 @@
+﻿@model RegistrationsViewModel
+@{
+    ViewData["Title"] = "My Events";
+}
+
+<div>
+    <h1>Registrations for @Model.Event.Name</h1>
+
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Creation date</th>
+        </tr>
+        @if (!Model.Registrations.Any())
+        {
+            <tr>
+                <td colspan="4">No registrations</td>
+            </tr>
+        }
+        @foreach (var item in Model.Registrations)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>@item.CreateDate</td>
+            </tr>
+        }
+    </table>
+</div>

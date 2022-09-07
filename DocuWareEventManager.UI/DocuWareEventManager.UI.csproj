@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocuWareEventManager.BLL\DocuWareEventManager.BLL.csproj" />
+    <ProjectReference Include="..\DocuWareEventManager.Core\DocuWareEventManager.Core.csproj" />
+    <ProjectReference Include="..\DocuWareEventManager.Root\DocuWareEventManager.Root.csproj" />
+  </ItemGroup>
+
+</Project>

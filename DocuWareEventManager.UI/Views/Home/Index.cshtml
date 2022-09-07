@@ -1,0 +1,34 @@
+﻿@model EventListViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["message"]
+    </div>
+}
+    <div>
+        <h1>All Events</h1>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Location</td>
+                    <td>@item.StartDate.ToString("g")</td>
+                    <td>@item.EndDate.ToString("g")</td>
+                    <td><a asp-controller="Event" asp-action="RegisterToEvent" asp-route-eventId="@(item.Id)">Register</a></td>
+                </tr>
+            }
+        </table>
+    </div>
